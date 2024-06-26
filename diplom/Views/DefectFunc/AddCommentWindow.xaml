@@ -1,0 +1,25 @@
+﻿<Window x:Class="diplom.Views.DefectFunc.AddCommentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.DefectFunc"
+        mc:Ignorable="d"
+        Title="Введите комментарий" Height="350" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Введите комментарий: " VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox x:Name="commentBox" Grid.Column="1" Grid.ColumnSpan="2" Height="150" Width="290" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button Click="SaveButton_Click" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Сохранить комментарий" FontSize="24"/>
+    </Grid>
+</Window>

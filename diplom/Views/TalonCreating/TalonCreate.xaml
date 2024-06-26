@@ -1,0 +1,65 @@
+﻿<Window x:Class="diplom.Views.TalonCreating.TalonCreate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.TalonCreating"
+        mc:Ignorable="d"
+        Title="Создание заявки" Height="500" Width="420" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Регистратор:" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="regUser" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Text="E-mail" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" x:Name="regUserEmail" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <CheckBox Grid.Row="2" HorizontalAlignment="Right" x:Name="email1" Checked="email1_Checked" Unchecked="email1_Unchecked" VerticalAlignment="Center" Content="Дополнительный адрес 1"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="email1text" VerticalAlignment="Center" HorizontalAlignment="Center" Width="190" Visibility="Hidden"/>
+
+        <CheckBox Grid.Row="3" HorizontalAlignment="Right" x:Name="email2" Checked="email2_Checked" Unchecked="email2_Unchecked" VerticalAlignment="Center" Content="Дополнительный адрес 2"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="email2text" VerticalAlignment="Center" HorizontalAlignment="Center" Width="190" Visibility="Hidden"/>
+        
+        <CheckBox Grid.Row="4" HorizontalAlignment="Right" x:Name="email3" Checked="email3_Checked" Unchecked="email3_Unchecked" VerticalAlignment="Center" Content="Дополнительный адрес 3"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="email3text" VerticalAlignment="Center" HorizontalAlignment="Center" Width="190" Visibility="Hidden"/>
+
+        <CheckBox Grid.Row="5" HorizontalAlignment="Right" x:Name="email4" Checked="email4_Checked" Unchecked="email4_Unchecked" VerticalAlignment="Center" Content="Дополнительный адрес 4"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" x:Name="email4text" VerticalAlignment="Center" HorizontalAlignment="Center" Width="190" Visibility="Hidden"/>
+
+        <TextBlock Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Дефект"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" x:Name="defectId" VerticalAlignment="Center" HorizontalAlignment="Center" Width="190" SelectedIndex="{Binding Path=Defects}" DisplayMemberPath="ShortDesc"/>
+
+        <TextBlock Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Готовы допуститься в"/>
+        <TextBox Grid.Row="7" Grid.Column="1"  x:Name="dopTime" VerticalAlignment="Center" HorizontalAlignment="Center" Width="90"/>
+
+        <TextBlock Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Дата начала работ"/>
+        <DatePicker Grid.Row="8" Grid.Column="1" x:Name="datePicker" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDateChanged="DatePicker2DateTime_SelectedDateChanged" Width="90"/>
+
+        <TextBlock Grid.Row="9" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Плановая дата закрытия наряда"/>
+        <DatePicker Grid.Row="9" Grid.Column="1" x:Name="datePicker2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90"/>
+
+        <TextBlock Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Center" Text="ФИО рук. работ"/>
+        <ComboBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" x:Name="fioTAcombobox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="190" SelectedIndex="{Binding Path=Users}" DisplayMemberPath="Fio"/>
+
+        <Button Grid.Row="11" Grid.ColumnSpan="3" Width="200" Height="20" Content="Создать заявку" Click="CreateButton_Click"/>
+    </Grid>
+</Window>

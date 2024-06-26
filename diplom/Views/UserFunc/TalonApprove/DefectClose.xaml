@@ -1,0 +1,32 @@
+﻿<Window x:Class="diplom.Views.UserFunc.TalonApprove.DefectClose"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.UserFunc.TalonApprove"
+        mc:Ignorable="d"
+        Title="Закрыть дефект / Отправить на доработку" Height="450" Width="800" FontSize="16">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="button1" Checked="button1_Checked" Unchecked="button1_Unchecked" Content="Отправить на доработку УР/УЭ"/>
+            <RadioButton x:Name="closeButton" Content="Закрыть дефект"/>
+        </StackPanel>
+        <StackPanel x:Name="buttonStack" Grid.Column="1" Visibility="Hidden" Grid.ColumnSpan="2" HorizontalAlignment="left" VerticalAlignment="Center">
+            <RadioButton x:Name="buttonUR" Content="Отправить на доработку Управление Ремонта"/>
+            <RadioButton x:Name="buttonUE" Content="Отправить на доработку Управление Эксплуатации"/>
+        </StackPanel>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Комментарий:" FontSize="24"/>
+        <TextBox x:Name="endComment" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="500" TextWrapping="Wrap"/>
+        <Button Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Сохранить" Width="200" Height="50" Click="Button_Click"/>
+    </Grid>
+</Window>

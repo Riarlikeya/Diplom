@@ -1,0 +1,34 @@
+﻿<Window x:Class="diplom.Auth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.RowSpan="5" Grid.ColumnSpan="2"  Source="/Reftinskaya_GRES_nature.jpg" Stretch="UniformToFill" StretchDirection="UpOnly"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Логин:" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="LoginBox" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Height="26" Width="300" VerticalAlignment="Center" FontSize="20"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Пароль:" FontWeight="Bold" FontSize="20"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Height="26" Width="300" VerticalAlignment="Center" FontSize="20"/>
+
+        <Button Content="Войти" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Click="Auth_Click" VerticalAlignment="Center" Width="150" FontSize="20" FontWeight="Bold"/>
+    </Grid>
+</Window>

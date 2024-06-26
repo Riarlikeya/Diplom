@@ -1,0 +1,40 @@
+﻿<Window x:Class="diplom.Views.UserFunc.TalonApprove.TalonViewAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.UserFunc.TalonApprove"
+        mc:Ignorable="d"
+        Title="Журнал заявок" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" x:Name="dataGrid" ItemsSource="{Binding Path=Talons}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Краткое описание дефекта" Binding="{Binding Path=Defect.ShortDesc}"/>
+                <DataGridTextColumn Header="Автор заявки" Binding="{Binding Path=ReguserNavigation.Fio}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Tstatus.Stitle}"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Path=Regemail}"/>
+                <DataGridTextColumn Header="Время допуска" Binding="{Binding Path=Readytime}"/>
+                <DataGridTextColumn Header="Дата начала работ" Binding="{Binding Path=Startdate}"/>
+                <DataGridTextColumn Header="Плановая дата завершения" Binding="{Binding Path=Enddate}"/>
+                <DataGridTextColumn Header="Дополнительные e-mail адреса" Binding="{Binding Path=Emaildop}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Принять в работу" Click="TalonApprove_Click"/>
+                    <MenuItem Header="Отклонить заявку" Click="TalonReject_Click"/>
+                    <MenuItem Header="Закрыть дефект/Отправить на доработку" Click="TalonClose_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+
+        <StackPanel>
+            <RadioButton IsChecked="False" Content="Ожидают обработки" x:Name="WaitRadioButton" Checked="RadioButton_Checked"/>
+            <RadioButton IsChecked="False" Content="Обработаны" x:Name="ApprovedRadioButton" Checked="RadioButton_Checked"/>
+        </StackPanel>
+    </Grid>
+</Window>

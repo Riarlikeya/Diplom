@@ -1,0 +1,52 @@
+﻿<Window x:Class="diplom.Views.DefectFunc.DefectAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.DefectFunc"
+        mc:Ignorable="d"
+        Title="Ввод дефекта" Height="600" Width="900" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Подразделение УР:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="jobAbbrev" Grid.Column="1" FontSize="20" Margin="24,14,0,15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <TextBlock Text="Автор регистрации:" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="regAuthor" Grid.Column="1" Margin="24,14,0,15" Grid.Row="1" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <TextBlock Text="Автор сообщения:" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <ComboBox x:Name="mesAuthor" Grid.Row="2" Grid.Column="1" Margin="24,14,0,15" HorizontalAlignment="Left" FontSize="20" Width="335" SelectedIndex="{Binding Path=Users}" DisplayMemberPath="Fio"/>
+
+        <TextBlock Text="Блок:" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" Margin="24,14,241,15" Width="335" Name="unitsBox" SelectedIndex="{Binding Path=Units}" DisplayMemberPath="Uabbreviation"/>
+
+        <TextBlock Text="Цех:" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" Margin="24,14,241,15" Width="335" Name="gildsBox" SelectedIndex="{Binding Path=Gilds}" DisplayMemberPath="Gabbreviaton"/>
+
+        <TextBlock Text="Приоритет:" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" Margin="24,14,241,15" Width="335" Name="priorityBox" SelectedIndex="{Binding Path=Priorities}" DisplayMemberPath="Pname"/>
+
+        <TextBlock Text="Краткое описание дефекта:" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="24,14,24,14" x:Name="shortDesc" FontSize="20"/>
+
+        <TextBlock Text="Подробное описание дефекта:" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Margin="24,14,24,14" x:Name="fullDesc" FontSize="20" TextWrapping="Wrap"/>
+
+        <Button Grid.Column="1" Grid.Row="8" Margin="24,14,241,15" Content="Добавить дефект" FontSize="20" Click="SaveButton_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="diplom.Views.UserFunc.UserAdd.UserView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.UserFunc.UserAdd"
+        mc:Ignorable="d"
+        Title="Просмотр списка пользователей" Height="450" Width="800">
+    <Grid>
+        
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding Path=Users}" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Path=Login}"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Path=Fio}"/>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Path=Pnumber}"/>
+                <DataGridTextColumn Header="Электронная почта" Binding="{Binding Path=Email}"/>
+                <DataGridTextColumn Header="Отдел" Binding="{Binding Path=Job.Jabbreviation}"/>
+                <DataGridTextColumn Header="Системная роль" Binding="{Binding Path=Srole.Rname}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Редактировать" Click="EditUser_Click"/>
+                    <MenuItem Header="Удалить" Click="DeleteUser_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        
+    </Grid>
+</Window>

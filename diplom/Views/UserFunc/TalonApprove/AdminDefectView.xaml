@@ -1,0 +1,116 @@
+﻿<Window x:Class="diplom.Views.UserFunc.TalonApprove.AdminDefectView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.Views.UserFunc.TalonApprove"
+        mc:Ignorable="d"
+        Title="Журнал дефектов" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Цех" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Блок" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Подразделение УР" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <CheckBox x:Name="gild1" Checked="FilterChanged" Unchecked="FilterChanged" Content="Электрический цех"/>
+            <CheckBox x:Name="gild2" Checked="FilterChanged" Unchecked="FilterChanged" Content="Химический цех"/>
+            <CheckBox x:Name="gild3" Checked="FilterChanged" Unchecked="FilterChanged" Content="Котлотурбинный цех блоков 300 МВт"/>
+            <CheckBox x:Name="gild4" Checked="FilterChanged" Unchecked="FilterChanged" Content="Котлотурбинный цех блоков 500 МВт"/>
+            <CheckBox x:Name="gild5" Checked="FilterChanged" Unchecked="FilterChanged" Content="Топливно-транспортный цех"/>
+            <CheckBox x:Name="gild6" Checked="FilterChanged" Unchecked="FilterChanged" Content="Цех золошлакоудаления"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel>
+                <CheckBox x:Name="unit1" Checked="FilterChanged" Unchecked="FilterChanged" Content="1"/>
+                <CheckBox x:Name="unit2" Checked="FilterChanged" Unchecked="FilterChanged" Content="2"/>
+                <CheckBox x:Name="unit3" Checked="FilterChanged" Unchecked="FilterChanged" Content="3"/>
+                <CheckBox x:Name="unit4" Checked="FilterChanged" Unchecked="FilterChanged" Content="4"/>
+                <CheckBox x:Name="unit5" Checked="FilterChanged" Unchecked="FilterChanged" Content="5"/>
+            </StackPanel>
+            <StackPanel>
+                <CheckBox x:Name="unit6" Checked="FilterChanged" Unchecked="FilterChanged" Content="6"/>
+                <CheckBox x:Name="unit7" Checked="FilterChanged" Unchecked="FilterChanged" Content="7"/>
+                <CheckBox x:Name="unit8" Checked="FilterChanged" Unchecked="FilterChanged" Content="8"/>
+                <CheckBox x:Name="unit9" Checked="FilterChanged" Unchecked="FilterChanged" Content="9"/>
+                <CheckBox x:Name="unit10" Checked="FilterChanged" Unchecked="FilterChanged" Content="10"/>
+            </StackPanel>
+            <StackPanel>
+                <CheckBox x:Name="unit11" Checked="FilterChanged" Unchecked="FilterChanged" Content="ТП"/>
+                <CheckBox x:Name="unit12" Checked="FilterChanged" Unchecked="FilterChanged" Content="СЗШУ"/>
+                <CheckBox x:Name="unit13" Checked="FilterChanged" Unchecked="FilterChanged" Content="ОРУ"/>
+                <CheckBox x:Name="unit14" Checked="FilterChanged" Unchecked="FilterChanged" Content="БН-2"/>
+                <CheckBox x:Name="unit15" Checked="FilterChanged" Unchecked="FilterChanged" Content="ХВО"/>
+            </StackPanel>
+            <StackPanel>
+                <CheckBox x:Name="unit16" Checked="FilterChanged" Unchecked="FilterChanged" Content="П/О"/>
+                <CheckBox x:Name="unit17" Checked="FilterChanged" Unchecked="FilterChanged" Content="СХР"/>
+                <CheckBox x:Name="unit18" Checked="FilterChanged" Unchecked="FilterChanged" Content="ЭЛ-300"/>
+                <CheckBox x:Name="unit19" Checked="FilterChanged" Unchecked="FilterChanged" Content="ЭЛ-500"/>
+                <CheckBox x:Name="unit20" Checked="FilterChanged" Unchecked="FilterChanged" Content="У/Р-300"/>
+            </StackPanel>
+            <StackPanel>
+                <CheckBox x:Name="unit21" Checked="FilterChanged" Unchecked="FilterChanged" Content="У/Р-500"/>
+                <CheckBox x:Name="unit22" Checked="FilterChanged" Unchecked="FilterChanged" Content="УКУТ"/>
+                <CheckBox x:Name="unit23" Checked="FilterChanged" Unchecked="FilterChanged" Content="ЖДХ"/>
+                <CheckBox x:Name="unit24" Checked="FilterChanged" Unchecked="FilterChanged" Content="ПОЖ/ТУШ"/>
+                <CheckBox x:Name="unit25" Checked="FilterChanged" Unchecked="FilterChanged" Content="КОНДИЦ"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel>
+                <CheckBox x:Name="ur1" Checked="FilterChanged" Unchecked="FilterChanged" Content="СРКО"/>
+                <CheckBox x:Name="ur2" Checked="FilterChanged" Unchecked="FilterChanged" Content="СРТО"/>
+                <CheckBox x:Name="ur3" Checked="FilterChanged" Unchecked="FilterChanged" Content="ОРВО"/>
+                <CheckBox x:Name="ur4" Checked="FilterChanged" Unchecked="FilterChanged" Content="УР ТАИ"/>
+                <CheckBox x:Name="ur5" Checked="FilterChanged" Unchecked="FilterChanged" Content="ССТП"/>
+            </StackPanel>
+            <StackPanel>
+                <CheckBox x:Name="ur6" Checked="FilterChanged" Unchecked="FilterChanged" Content="СРЭО 300 500"/>
+                <CheckBox x:Name="ur7" Checked="FilterChanged" Unchecked="FilterChanged" Content="СРЭО ТПВС"/>
+                <CheckBox x:Name="ur8" Checked="FilterChanged" Unchecked="FilterChanged" Content="СРО ТП"/>
+                <CheckBox x:Name="ur9" Checked="FilterChanged" Unchecked="FilterChanged" Content="СРО СЗШУ"/>
+                <CheckBox x:Name="ur10" Checked="FilterChanged" Unchecked="FilterChanged" Content="РЗА"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid ItemsSource="{Binding Path=FilteredDefects}" x:Name="dataGrid" Grid.Row="2" Grid.ColumnSpan="3" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Дата создания" Binding="{Binding Path=Date}"/>
+                <DataGridTextColumn Header="Цех" Binding="{Binding Path=Gild.Gabbreviaton}"/>
+                <DataGridTextColumn Header="Блок" Binding="{Binding Path=Unit.Uabbreviation}"/>
+                <DataGridTextColumn Header="Подразделение УР" Binding="{Binding Path=Ur.Jabbreviation}"/>
+                <DataGridTextColumn Header="Краткое описание дефекта" Binding="{Binding Path=ShortDesc}"/>
+                <DataGridTextColumn Header="Полное описание дефекта" Binding="{Binding Path=FullDesc}"/>
+                <DataGridTextColumn Header="Автор сообщения" Binding="{Binding Path=AuthorMesNavigation.Fio}"/>
+                <DataGridTextColumn Header="Автор регистрации" Binding="{Binding Path=AuthorRegNavigation.Fio}"/>
+                <DataGridTextColumn Header="ФИО ТА" Binding="{Binding Path=FioTaNavigation.Fio}"/>
+                <DataGridTextColumn Header="Приоритет" Binding="{Binding Path=Priorety.Pname}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status.Sname}"/>
+                <DataGridTextColumn Header="Дата устранения (план)" Binding="{Binding Path=Planneddate}"/>
+                <DataGridTextColumn Header="Дата устранения (факт)" Binding="{Binding Path=Factdate}"/>
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Path=Comment}"/>
+                <DataGridTextColumn Header="Комментарий УР" Binding="{Binding Path=Enddcomment}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Закрыть дефект / Отправить на доработку" Click="CloseDefect_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Window>
